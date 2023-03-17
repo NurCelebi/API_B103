@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 public class Get07 extends JsonPlaceHolderBaseUrl {
     /*
         Given
-              https://jsonplaceholder.typicode.com/todos
+              https://jsonplaceholder.typicode.com/todos/ -- endpoint request yapicaz ve test edicez
       When
           I send GET Request to the URL == > URL'e Get Request gonderin
       Then
@@ -44,9 +44,10 @@ public class Get07 extends JsonPlaceHolderBaseUrl {
         //Print all ids greater than 190 on the console
         JsonPath jsonPath = response.jsonPath();
         List<Integer> list= jsonPath.getList("findAll{it.id>190}.id"); //190dan buyuk olanlari filtrelemek icin kullandigimiz yontem --Groovy Language Java temelli bir programlama dilidir.
-        System.out.println("list = " + list);
+        System.out.println("list = " + list);  //list halinde tum id'leri yazdirir
 
         /*
+        json datayi sinirlandirma yapmak icin groovy language ile yazip istenileni cagirabilriz.
         id'si 190dan buyuk olanlari yazdir diyor
         jsonPath yaptim list'e attim ve getList olarak getirdim 190dan buyuk olanlari alacagim icin ise
         Groovy language yazarak "findAll{it.id>190}.userId alabilirim

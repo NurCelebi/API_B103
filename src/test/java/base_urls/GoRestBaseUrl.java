@@ -1,11 +1,10 @@
 package base_urls;
 
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
-public class JsonPlaceHolderBaseUrl {
+public class GoRestBaseUrl {
     
     //bu siteye karsilik bir islem yapacak olursak buradan extend edip cagiracagiz.
 
@@ -19,7 +18,10 @@ public class JsonPlaceHolderBaseUrl {
     //spec icinde base url var ve diger onemli seyler var.
     //artik herseyi spec metodu ile cagirabilecegim.belirtilen parametreler ile gelecek
     @Before //her test methodundan once calisir
-    public void setUp() {
-        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).setAccept(ContentType.JSON).setBaseUri("https://jsonplaceholder.typicode.com").build();
+    public void setUp(){
+        spec = new RequestSpecBuilder().setBaseUri("https://gorest.co.in/public/v1").build();
+
+
+
     }
 }

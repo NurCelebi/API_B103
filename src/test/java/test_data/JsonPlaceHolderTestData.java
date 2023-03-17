@@ -15,9 +15,18 @@ public class JsonPlaceHolderTestData {
     public Map<String,Object> expectedDataMethod(Integer userId,String title,Boolean completed){
 
         Map<String,Object> expectedData = new HashMap<>();
-        expectedData.put("userId", userId);
-        expectedData.put("title", title);
-        expectedData.put("completed", completed);
+        if (userId != null) { //eklemek istemedigim degerleri null atiyorum
+            expectedData.put("userId", userId);
+        }
+
+        if (title!=null){
+            expectedData.put("title", title);
+        }
+
+        if (completed!= null){
+            expectedData.put("completed", completed);
+        }
+
 
         return expectedData;
     }
