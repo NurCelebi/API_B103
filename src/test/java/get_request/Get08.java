@@ -60,10 +60,10 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
 
         assertEquals(200,response.statusCode());
         assertEquals(expectedData.get("completed"),actualData.get("completed"));
-        assertEquals(expectedData.get("title"),expectedData.get("title"));
+        assertEquals(expectedData.get("title"),actualData.get("title"));
         assertEquals(expectedData.get("userId"),actualData.get("userId"));
 
-        // And header "Via" is "1.1 vegur"
+        // And header "Via" is "1.1 vegur" --bu neden boyle oldu?
         assertEquals(expectedData.get("Via"),response.header("Via"));
 
 

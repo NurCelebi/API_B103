@@ -53,6 +53,8 @@ public class Get10 extends GoRestBaseUrl {
 
        //Do Assertion --
         //500 hatasi nedeniyle verildi
+
+
     }
 
 }

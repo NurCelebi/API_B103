@@ -42,7 +42,7 @@ public class Get05 extends HerOkuAppBaseUrl {
 
         //sally brown ismindeki id leri veriyor.
         // Among the data there should be someone whose firstname is "Sally" and last name is "Brown"
-        assertTrue(response.asString().contains("bookingid"));
+        assertTrue(response.asString().contains("bookingid"));  //? bir daha bak
 
 
 
