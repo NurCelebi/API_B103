@@ -1,8 +1,9 @@
 package pojos;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true) //objectMapperPojo class yparken buradaki impor'u degistirip codehouse dan cagirdik
 
 //popjoi icinde olmayan deger icin onu ignore et diyoruz boyle yaparak
 public class JsonPlaceHolderPojo {
