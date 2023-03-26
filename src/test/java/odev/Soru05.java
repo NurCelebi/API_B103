@@ -1,6 +1,6 @@
 package odev;
 
-import base_urls.RegresUrl;
+import base_urls.RegresBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.given;
 
-public class Soru05 extends RegresUrl {
+public class Soru05 extends RegresBaseUrl {
 
      /*
         Given

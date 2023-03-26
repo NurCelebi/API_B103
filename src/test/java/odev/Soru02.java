@@ -1,13 +1,13 @@
 package odev;
 
-import base_urls.RegresUrl;
+import base_urls.RegresBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Soru02 extends RegresUrl {
+public class Soru02 extends RegresBaseUrl {
 
     /*
         Given
