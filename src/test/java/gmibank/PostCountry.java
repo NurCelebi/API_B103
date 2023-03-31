@@ -4,7 +4,9 @@ import base_urls.GmiBankBaseUrl;
 import gmibank.pojos.Country;
 import gmibank.pojos.States;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
+import util.ObjectMapperUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,14 +76,14 @@ public class PostCountry extends GmiBankBaseUrl {
         spec.pathParams("first","api","second","tp-countries");
 
         //set the expected data
-        States states1 = new States(1,"Apple",null);
-        States states2 = new States(2,"Orange",null);
-        States states3 = new States(3,"Pear",null);
+        States state1 = new States(1,"Apple",null);
+        States state2 = new States(2,"Orange",null);
+        States state3 = new States(3,"Pear",null);
 
         List<States> stateList = new ArrayList<>();
-        stateList.add(states1);
-        stateList.add(states2);
-        stateList.add(states3);
+        stateList.add(state1);
+        stateList.add(state2);
+        stateList.add(state3);
 
         Country expectedData = new Country("Banana Republic",stateList);
         System.out.println("expectedData = " + expectedData);
@@ -91,7 +93,17 @@ public class PostCountry extends GmiBankBaseUrl {
         response.prettyPrint();
 
         //Do Assertion
-        //odev
+        Country actualData = ObjectMapperUtils.convertJsonToJava(response.asString(),Country.class);
+        System.out.println("actualData = " + actualData);
+
+        Assert.assertEquals(expectedData.getName(), actualData.getName());
+        Assert.assertEquals(state1.getName(), actualData.getStates().get(0).getName());
+        Assert.assertEquals(state1.getId(), actualData.getStates().get(0).getId());
+        Assert.assertEquals(state2.getName(), actualData.getStates().get(1).getName());
+        Assert.assertEquals(state2.getId(), actualData.getStates().get(1).getId());
+        Assert.assertEquals(state3.getName(), actualData.getStates().get(2).getName());
+        Assert.assertEquals(state3.getId(), actualData.getStates().get(2).getId());
+
 
 
     }
